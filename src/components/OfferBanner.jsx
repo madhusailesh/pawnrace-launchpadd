@@ -1,71 +1,315 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarDays, Clock3, MessageCircle } from "lucide-react";
 
 import sambitImg from "../assets/sambit-panda.jpg";
-console.log(sambitImg)
+
 const OfferBanner = () => {
-  const navigate = useNavigate();
+  // Put your actual WhatsApp link here
+  const whatsappLink = "YOUR_WHATSAPP_LINK_HERE";
+
+  const handleWhatsApp = () => {
+    window.open(whatsappLink, "_blank", "noopener,noreferrer");
+  };
 
   return (
-    <section className="relative w-full min-h-[80vh] overflow-hidden bg-black">
+    <section className="relative w-full overflow-hidden bg-[#080d12]">
 
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900 to-black opacity-90"></div>
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#080d12] via-[#111923] to-[#080d12]" />
 
       {/* Glow Effects */}
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-orange-600/20 blur-[200px] rounded-full"></div>
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-red-600/20 blur-[200px] rounded-full"></div>
+      <div className="absolute -top-40 -left-40 w-[450px] h-[450px] rounded-full bg-blue-500/10 blur-[160px]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between min-h-[80vh]">
+      <div className="absolute -bottom-40 -right-40 w-[450px] h-[450px] rounded-full bg-orange-500/10 blur-[160px]" />
 
-        {/* LEFT CONTENT */}
-        <div className="max-w-xl text-center md:text-left">
+      {/* Main Container */}
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 py-10 md:py-14">
 
-          <span className="bg-orange-600/20 border border-orange-500 px-4 py-1 rounded-full text-orange-400 text-sm font-bold">
-            FLASH SALE • 60% OFF
-          </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          <h1 className="text-4xl md:text-7xl font-black text-white mt-6 leading-tight">
-            Master Chess
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-              Beginner to Pro
-            </span>
-          </h1>
+          {/* =====================================================
+              LEFT SIDE
+          ====================================================== */}
 
-          <p className="text-gray-400 text-lg mt-6">
-            Train with FIDE-rated coaches. Live classes, structured study
-            plans and tournaments.
-          </p>
+          <div className="text-center md:text-left">
 
-          <div className="flex flex-col sm:flex-row items-center sm:items-end gap-6 mt-8">
+            {/* IM */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-none text-blue-300">
+              IM
+            </h1>
 
-            <div>
-              <p className="text-gray-500 line-through text-lg">₹4,999</p>
-              <p className="text-4xl font-black text-white">
-                ₹1,999 <span className="text-orange-500 text-xl">/-</span>
+            {/* SAMBIT PANDA */}
+            <h2 className="mt-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-none text-white">
+              SAMBIT PANDA
+            </h2>
+
+            {/* 2-DAY MASTER CLASS */}
+            <div className="inline-block mt-4 border border-gray-500 rounded-md px-4 py-1">
+
+              <p className="text-lg sm:text-xl md:text-2xl tracking-[0.15em] font-bold text-white">
+                2-DAY MASTER CLASS
               </p>
+
             </div>
 
-            <button
-              onClick={() => navigate("/special-offer")}
-              className="flex items-center gap-3 bg-gradient-to-r from-orange-600 to-red-600 px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-all shadow-lg hover:shadow-orange-500/30"
-            >
-              Claim Offer
-              <ArrowRight size={20} />
-            </button>
+            {/* International Master | Peak Rating 2452 */}
+            <div className="mt-4 flex items-center justify-center md:justify-start gap-3 text-gray-300 text-sm sm:text-base">
+
+              <span>
+                International Master
+              </span>
+
+              <span className="text-gray-500">
+                |
+              </span>
+
+              <span>
+                Peak Rating 2452
+              </span>
+
+            </div>
+
+
+            {/* =====================================================
+                TOPICS
+            ====================================================== */}
+
+            <div className="mt-6 space-y-2 max-w-md mx-auto md:mx-0">
+
+              {/* Thinking in Quiet Positions */}
+              <div className="flex items-center gap-4 border-b border-gray-700/70 pb-2">
+
+                <div className="w-12 h-12 shrink-0 rounded-lg border border-gray-600 bg-[#111b23] flex items-center justify-center text-2xl">
+                  ♟
+                </div>
+
+                <p className="text-left text-gray-200 text-sm sm:text-base leading-tight">
+                  Thinking in
+                  <br />
+                  Quiet Positions
+                </p>
+
+              </div>
+
+
+              {/* When Should You Calculate? */}
+              <div className="flex items-center gap-4 border-b border-gray-700/70 pb-2">
+
+                <div className="w-12 h-12 shrink-0 rounded-lg border border-gray-600 bg-[#111b23] flex items-center justify-center text-2xl">
+                  🧠
+                </div>
+
+                <p className="text-left text-gray-200 text-sm sm:text-base leading-tight">
+                  When Should
+                  <br />
+                  You Calculate?
+                </p>
+
+              </div>
+
+
+              {/* Improving Your Pieces */}
+              <div className="flex items-center gap-4 border-b border-gray-700/70 pb-2">
+
+                <div className="w-12 h-12 shrink-0 rounded-lg border border-gray-600 bg-[#111b23] flex items-center justify-center text-2xl">
+                  🎯
+                </div>
+
+                <p className="text-left text-gray-200 text-sm sm:text-base leading-tight">
+                  Improving
+                  <br />
+                  Your Pieces
+                </p>
+
+              </div>
+
+
+              {/* Converting Small Advantages */}
+              <div className="flex items-center gap-4">
+
+                <div className="w-12 h-12 shrink-0 rounded-lg border border-gray-600 bg-[#111b23] flex items-center justify-center text-2xl">
+                  🏆
+                </div>
+
+                <p className="text-left text-gray-200 text-sm sm:text-base leading-tight">
+                  Converting
+                  <br />
+                  Small Advantages
+                </p>
+
+              </div>
+
+            </div>
+
+
+            {/* =====================================================
+                PRICE
+            ====================================================== */}
+
+            <div className="mt-7 flex justify-center md:justify-start">
+
+              <div className="flex items-center gap-3 rounded-xl border border-gray-600 bg-[#101820] px-4 py-2">
+
+                <span className="text-4xl sm:text-5xl font-black text-white">
+                  ₹899
+                </span>
+
+                <span className="rounded-lg bg-blue-300 px-3 py-2 text-xl sm:text-2xl font-black text-black">
+                  ONLY
+                </span>
+
+              </div>
+
+            </div>
+
+
+            {/* =====================================================
+                DATE / TIME / DURATION
+            ====================================================== */}
+
+            <div className="mt-5 flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+
+              {/* 2 Days */}
+              <div className="flex items-center gap-2">
+
+                <CalendarDays
+                  size={27}
+                  className="text-white"
+                />
+
+                <div className="text-left">
+                  <p className="text-white font-semibold text-sm">
+                    2 Days
+                  </p>
+
+                  <p className="text-gray-400 text-xs">
+                    3 Hours Total
+                  </p>
+                </div>
+
+              </div>
+
+
+              {/* Divider */}
+              <div className="hidden sm:block h-10 w-px bg-gray-600" />
+
+
+              {/* 8 PM IST */}
+              <div className="flex items-center gap-2">
+
+                <Clock3
+                  size={27}
+                  className="text-white"
+                />
+
+                <div className="text-left">
+                  <p className="text-white font-semibold text-sm">
+                    8 PM IST
+                  </p>
+
+                  <p className="text-gray-400 text-xs">
+                    1.5 Hrs / Day
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =====================================================
+                BOTTOM INFORMATION
+            ====================================================== */}
+
+            <div className="mt-5 inline-block rounded-lg border border-gray-600 bg-[#111a21] px-4 py-2">
+
+              <p className="text-gray-300 text-xs sm:text-sm">
+                2 Days
+                <span className="mx-3 text-gray-500">•</span>
+                3 Hours
+                <span className="mx-3 text-gray-500">•</span>
+                Live Master-Level Training
+              </p>
+
+            </div>
+
+
+            {/* =====================================================
+                JOIN NOW BUTTON
+            ====================================================== */}
+
+            <div className="mt-5">
+
+              <button
+                onClick={handleWhatsApp}
+                className="
+                  group
+                  w-full
+                  sm:w-auto
+                  flex
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-lg
+                  bg-blue-300
+                  px-6
+                  py-3
+                  text-base
+                  sm:text-lg
+                  font-black
+                  text-black
+                  transition-all
+                  duration-300
+                  hover:bg-blue-200
+                  hover:scale-[1.02]
+                  shadow-lg
+                "
+              >
+
+                LIMITED SEATS — JOIN NOW!
+
+                <ArrowRight
+                  size={22}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+
+              </button>
+
+            </div>
 
           </div>
 
-        </div>
 
-        {/* RIGHT IMAGE */}
-        <div className="mt-10 md:mt-0 relative">
+          {/* =====================================================
+              RIGHT SIDE IMAGE
+          ====================================================== */}
 
-          <div className="absolute inset-0 bg-orange-500/20 blur-[80px] rounded-full"></div>
+          <div className="relative flex justify-center">
 
-          <img src={sambitImg} alt="coach" />
+            {/* Glow */}
+            <div className="absolute inset-10 bg-blue-500/10 blur-[100px] rounded-full" />
+
+            <div className="relative w-full max-w-[560px]">
+
+              <img
+                src={sambitImg}
+                alt="IM Sambit Panda - 2-Day Master Class"
+                className="
+                  relative
+                  w-full
+                  h-auto
+                  rounded-2xl
+                  object-cover
+                  shadow-2xl
+                  border
+                  border-white/10
+                "
+              />
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
